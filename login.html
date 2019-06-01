@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+body {
+	background: black;
+}
+#mc {
+	width:90%;
+	height:80%;	
+	position:absolute;
+	top:10%;
+	left:5%;
+	
+	background-color: white;
+}
+#title {
+	width:45%;
+	height:80%;	
+	position:absolute;
+	top:13%;
+	left:0%;	
+}
+
+#trax {
+	width:50px;
+	height:50px;
+	position:absolute;
+	top:45%;
+	left:48%;
+}
+#yourName{
+	width:50%;
+	position:absolute;
+	left:50%;
+	top:50%;
+	text-align:center;
+	font-size:20px;
+}
+#nameImg {
+	width:30%;
+	position:absolute;
+	left:10%;
+	top:40%;
+
+}
+#name {
+	width:35%;
+	position:absolute;
+	left:40%;
+	top:48%;
+	font-size:25px;
+
+}
+#start {
+	width:20%;
+	height:20%;
+	position:absolute;
+	left:75%;
+	top:76%;
+	font-size:25px;
+	background-color:gold;
+	font-family: Arial, bold;
+}
+</style>
+
+<script type="text/javascript">
+var state=0;
+var trax;
+function move(){
+	state=(state+1)%2;
+	trax.src="src/trax"+state+".png";
+	setTimeout(move, 100);	
+}
+function load(){
+	trax=document.getElementById('trax');
+	setTimeout(move, 100);	
+}
+function mclick(){
+	var name;
+	name=document.getElementById('name').value;
+	if(name==""){
+		alert('이름을 입력해주세요');
+		return;
+	}
+	console.log('click :'+name);
+	window.location.href="game.html?name="+name;
+}
+</script>
+
+</head>
+
+<body onload="load();">
+
+<div id="mc">
+	<img src="src/title.png" id="title">
+	<img src="src/trax0.png" id="trax">
+	<div id="yourName">
+		<img src="src/inputName.png" id="nameImg">
+		<input type="text" id="name">
+	</div>
+	<button id="start" onclick="mclick()">Game Start</button>
+</div>
+
+</body>
+</html>

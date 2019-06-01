@@ -1,0 +1,36 @@
+#me {
+	width:70px;
+	height:70px;
+	position:absolute;
+	left: 150px;
+	top: 280px;
+	z-index : 5;
+}
+#obs1 {
+	width:50px;
+	height:50px;
+	position:absolute;
+	left: 80%;
+	top: 300px;
+	z-index : 5;
+}
+
+#score {
+	width : 90%;
+	text-align:right;
+}
+
+#ground {
+	width : 80%;
+	position:absolute;
+	top: 330px;
+	z-index : 3;
+}
+#gameover {
+	visibility:hidden;
+	width:40%;
+	position:absolute;
+	left:30%;
+	top: 45%;
+	z-index:10; 
+}
